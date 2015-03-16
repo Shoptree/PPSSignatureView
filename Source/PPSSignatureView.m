@@ -206,6 +206,9 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
     self.hasSignature = NO;
 	
 	[self setNeedsDisplay];
+
+	if(self.signatureViewDelegate)
+		[self.signatureViewDelegate signatureDidChange:self];
 }
 
 
